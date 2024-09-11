@@ -12,10 +12,9 @@ from homeassistant.util.percentage import (
 )
 
 from homeassistant.components.fan import (
-    FanEntity,
+    FanEntity, 
+    FanEntityFeature,
     PLATFORM_SCHEMA,
-    SUPPORT_SET_SPEED,
-    SUPPORT_PRESET_MODE,
 )
 
 from homeassistant.const import (
@@ -313,7 +312,7 @@ class PhilipsAirPurifierFan(FanEntity):
     @property
     def supported_features(self) -> int:
         """Flag supported features."""
-        return SUPPORT_SET_SPEED | SUPPORT_PRESET_MODE
+        return FanEntityFeature.SET_SPEED | FanEntityFeature.PRESET_MODE
 
     @property
     def speed_count(self) -> int:
