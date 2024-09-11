@@ -312,7 +312,7 @@ class PhilipsAirPurifierFan(FanEntity):
     @property
     def supported_features(self) -> int:
         """Flag supported features."""
-        return FanEntityFeature.SET_SPEED | FanEntityFeature.PRESET_MODE
+        return FanEntityFeature.SET_SPEED | FanEntityFeature.PRESET_MODE | FanEntityFeature.TURN_OFF | FanEntityFeature.TURN_ON
 
     @property
     def speed_count(self) -> int:
